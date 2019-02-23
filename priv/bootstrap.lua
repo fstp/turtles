@@ -1,6 +1,8 @@
+local ip = "94.255.186.181"
+
 local function init()
     local response = http.get(
-        "http://localhost:4000/init"
+        "http://94.255.186.181:4000/init"
     )
     if response then
         local sResponse = response.readAll()
@@ -13,7 +15,7 @@ end
 
 local function fetch(id)
 	local response = http.get(
-		"http://localhost:4000/fetch?id="..id
+		"http://94.255.186.181:4000/fetch?id="..id
 	)
 	if response then
 		local sResponse = response.readAll()
@@ -29,7 +31,7 @@ local function post(id, result)
 		result = ""
 	end
 	local response = http.post(
-		"http://localhost:4000/result",
+		"http://94.255.186.181:4000/result",
 		"id="..id.."&".."result="..textutils.urlEncode(result)
 	)
 	if response then

@@ -68,7 +68,7 @@ defmodule Turtles.Endpoint do
     case Turtles.TurtleRegistry.get_pid(id) do
       {:ok, pid} ->
         ins = Turtles.Turtle.fetch_next_instruction(pid)
-        Logger.info(ins)
+        #Logger.info(ins)
         ins
 
       {:error, :not_found} ->
